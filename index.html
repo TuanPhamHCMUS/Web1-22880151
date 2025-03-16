@@ -1,14 +1,19 @@
-<!doctype html> <!-- Để gọi HTML có liên kết với CSS, Bootstrap, Javascrpt thì gõ  bs5 + tab -->
+<!doctype html>
 <html lang="en">
     <head>
-        <title>Title</title>
+        <title>22880239-Web1-Project</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
-
+        <!--Fontawesome-->
+        <script src="https://kit.fontawesome.com/da6ee01025.js" crossorigin="anonymous"></script>
+        <!--Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap" rel="stylesheet">
         <!-- Bootstrap CSS v5.2.1 -->
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -16,314 +21,274 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
-        <!-- cài https://icons.getbootstrap.com/?q=boots, hiểu là bootstrap icon-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-        <!-- Tự định nghĩa CSS -->
-        <link rel ="stylesheet" href ="style.css">
+        <link rel="stylesheet" href="css/22880239.css">
     </head>
 
     <body>
-        <!-- Tạo Header chiếm hết chiều rộng của trình duyệt, nếu container-fluid: full trang, bỏ -fuild thì sẽ có lề-->
-        <header class = "container-fluid bg-primary">
-            <!-- tạo component, navbar, gõ bs5-navbar chọn default -->
-            <!-- sửa thêm thuộc tính class = container, để tự động canh giữa -->
-            <!-- Xoá thuộc tính bg-light để chung màu với header, navbar-dark chữ sáng nền tối -->
-            <nav 
-                class="navbar navbar-expand-sm navbar-dark container"
+        <!-- Header -->
+        <header class="container">
+            <nav
+                class="navbar navbar-expand-sm navbar-light"
             >
                 <div class="container">
-                    <!-- icon lấy ở đây:  https://icons.getbootstrap.com/icons/bootstrap/ , 
-                    copy <i class="bi bi-bootstrap"></i> để trước test -->
-                    <a class="navbar-brand" href="#"><i class="bi bi-bootstrap"></i> Start Bootstrap</a>
+                    <a class="navbar-brand" href="#">
+                        <img src="images/logo.png" alt="Web1 Logo">
+                    </a>
                     <button
                         class="navbar-toggler d-lg-none"
                         type="button"
                         data-bs-toggle="collapse"
-                        data-bs-target="#collapsibleNavId"
-                        aria-controls="collapsibleNavId"
+                        data-bs-target="#menu-header"
+                        aria-controls="menu-header"
                         aria-expanded="false"
                         aria-label="Toggle navigation"
                     >
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="collapsibleNavId">
-                        <!-- thẻ hyperlink, vị trí me-auto được tự động, muốn bên phải, ms, margin start-->
+                    <div class="collapse navbar-collapse" id="menu-header">
                         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#" aria-current="page"
+                            <li class="nav-item active">
+                                <a class="nav-link" href="index.html" aria-current="page"
                                     >Home
-                                    <span class="visually-hidden">(current)</span></a
-                                >
+                                    <span class="visually-hidden">(current)</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
+                                <a class="nav-link" href="about.html">About</a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a
-                                    class="nav-link dropdown-toggle"
-                                    href="#"
-                                    id="dropdownId"
-                                    data-bs-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false"
-                                    >Dropdown</a
-                                >
-                                <div
-                                    class="dropdown-menu"
-                                    aria-labelledby="dropdownId"
-                                >
-                                    <a class="dropdown-item" href="#"
-                                        >Action 1</a
-                                    >
-                                    <a class="dropdown-item" href="#"
-                                        >Action 2</a
-                                    >
-                                </div>
+                            <li class="nav-item">
+                                <a class="nav-link" href="gallery.html">Gallery</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="blogs.html">Blogs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contacts.html">Contacts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-bs-toggle="modal"
+                                data-bs-target="#modalLogin">Login</a>
                             </li>
                         </ul>
+                        <form class="d-flex my-2 my-lg-0 border rounded-pill" id="formSearch">
+                            <input
+                                class="form-control ms-3  border-0"
+                                type="text"
+                                placeholder="Search" 
+                            />
+                            <button class="btn my-2 my-sm-0 border-0" type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </nav>
-        </header>
-        <!-- Phần phía sau là container -->
-        <main class="container">
-            <!-- Tạo slide show gõ bs5-cảousel chọn dèault-->
-            <!-- Hình cách mép trên 1 khoảng py-3-->
-            <div id="carouselId" class="carousel slide py-3" data-bs-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li
-                        data-bs-target="#carouselId"
-                        data-bs-slide-to="0"
-                        class="active"
-                        aria-current="true"
-                        aria-label="First slide"
-                    ></li>
-                    <li
-                        data-bs-target="#carouselId"
-                        data-bs-slide-to="1"
-                        aria-label="Second slide"
-                    ></li>
-                    <li
-                        data-bs-target="#carouselId"
-                        data-bs-slide-to="2"
-                        aria-label="Third slide"
-                    ></li>
-                </ol>
-                <div class="carousel-inner" role="listbox">
-                    <div class="carousel-item active">
-                        <!-- Đổi đường dẫn của hình-->
-                        <img
-                            src="images/banner1.jpg"
-                            class="w-100 d-block"
-                            alt="First slide"
-                        />
-                    </div>
-                    <div class="carousel-item">
-                        <img
-                            src="images/banner2.jpg"
-                            class="w-100 d-block"
-                            alt="Second slide"
-                        />
-                    </div>
-                    <div class="carousel-item">
-                        <img
-                            src="images/banner3.jpg"
-                            class="w-100 d-block"
-                            alt="Third slide"
-                        />
-                    </div>
-                </div>
-                <button
-                    class="carousel-control-prev"
-                    type="button"
-                    data-bs-target="#carouselId"
-                    data-bs-slide="prev"
-                >
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button
-                    class="carousel-control-next"
-                    type="button"
-                    data-bs-target="#carouselId"
-                    data-bs-slide="next"
-                >
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-                <!-- Tạo nút bấm, gõ div.carousel -->
-                <div class="carousel-caption "> 
-                    <buton class="btn btn-primary">
-                        See more
-                    </buton>
-                </div>
-            </div>
-            <!-- Gõ bs5-jum-->
-            <div class="p-5 mb-4 bg-light rounded-3">
-                <div class="container-fluid py-5">
-                    <h1 class="display-5 fw-bold">Custom jumbotron</h1>
-                    <!-- col-md-8 chỉnh khung hình, chỉnh lại chiếm 12 phần col-md-12 hoặc bỏ -->
-                    <p class="fs-4">
-                        Using a series of utilities, you can create this jumbotron, just
-                        like the one in previous versions of Bootstrap. Check out the
-                        examples below for how you can remix and restyle it to your liking.
-                    </p>
-                    <hr>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde repudiandae, deleniti distinctio animi illo consequatur non sunt, nostrum nulla cumque officiis sit accusamus, assumenda ut enim dolores laboriosam maiores quos.</p>
-                    <button class="btn btn-primary btn-lg" type="button">
-                        Example button
-                    </button>
-                </div>
-            </div>
-            <!-- Bootstrap JavaScript Libraries -->
-            <div class="row" id="about">
-                <div class="col">
-                    <!-- bs5-card-backround-->
-                    <div
-                        class="card text-white bg-success text-center p-3 h-100"
-                    >
-                        <div class="card-body">
-                            <!-- thêm icon, đinh nghĩa kích thước-->
-                            <i class="bi bi-file-earmark-person"></i>
-                            <h4 class="card-title">About</h4>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <!-- bs5-card-backround-->
-                    <div
-                        class="card text-white bg-danger text-center p-3 h-100"
-                    >
-                        <div class="card-body">
-                            <!-- thêm icon, đinh nghĩa kích thước-->
-                            <i class="bi bi-file-earmark-person"></i>
-                            <h4 class="card-title">Working Place</h4>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <!-- bs5-card-backround-->
-                    <div
-                        class="card text-white bg-warning text-center p-3 h-100"
-                    >
-                        <div class="card-body">
-                            <!-- thêm icon, đinh nghĩa kích thước-->
-                            <i class="bi bi-file-earmark-person"></i>
-                            <h4 class="card-title">Payment</h4>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Gõ bs5-card-head-foot -->
-            <div class="card my-3">
-                <div class="card-header text-center">
-                    <h1>Working Information</h1>
-                </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col align-self-center">
-                            <img src = "images/banner1.jpg" alt="" class="img-thumbnail">
-                        </div>
-                        <div class="col">
-                            <h4 class="card-title">Special Treatment</h4>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?</p>
-                        </div>
-                    </div>
-                    
-                </div>
-                <div class="card-footer text-center py-3">
-                    <button class="btn btn-primary"> Go somewhere
-                    </button>
-                </div>
-            </div>
-            <!-- Bootstrap JavaScript Libraries (div.col-lg-3.col-md-4.col-sm-6.mb-3>img.img-thumbnail.h-100[src="images/products/$.jpg"])*15 >> Enter -->
-            <div class="card">
-                <div class="card-header  text-center ">Image Gallery</div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/1.jpg" alt="" class="img-thumbnail h-100"></div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/2.jpg" alt="" class="img-thumbnail h-100"></div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/3.jpg" alt="" class="img-thumbnail h-100"></div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/4.jpg" alt="" class="img-thumbnail h-100"></div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/5.jpg" alt="" class="img-thumbnail h-100"></div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/6.jpg" alt="" class="img-thumbnail h-100"></div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/7.jpg" alt="" class="img-thumbnail h-100"></div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/8.jpg" alt="" class="img-thumbnail h-100"></div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/9.jpg" alt="" class="img-thumbnail h-100"></div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/10.jpg" alt="" class="img-thumbnail h-100"></div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/11.jpg" alt="" class="img-thumbnail h-100"></div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/12.jpg" alt="" class="img-thumbnail h-100"></div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/13.jpg" alt="" class="img-thumbnail h-100"></div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/14.jpg" alt="" class="img-thumbnail h-100"></div>
-                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/15.jpg" alt="" class="img-thumbnail h-100"></div>
-                    </div>
-                </div>
-            </div>
-        </main>
-        <!-- Tạo footer footer.container-fluid.bg-primary.text-white-->
-        <footer class="container-fluid bg-primary text-white">
-            <div class="container">
-                <div class="row py-3">
-                    <!-- Cột 1 -->
-                    <div class="col">
-                        <h2>Quick Links</h2>
-                        <!-- bs5-navbar-mininal-ul, bỏ expan để xuống dòng-->
-                        <nav class="navbar navbar-dark">
-                            <ul class="nav navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="#" aria-current="page"
-                                        >Nav 1 <span class="visually-hidden">(current)</span></a
-                                    >
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Nav 2</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                    <!-- Cột 2 -->
-                    <div class="col">
-                        <h2>New letters</h2>
-                        <!-- bs5-form-input-->
-                        <div class="mb-3">
-                            <label for="" class="form-label">Name</label>
-                            <input
-                                type="text"
-                                class="form-control"
-                                name=""
-                                id=""
-                                aria-describedby="helpId"
-                                placeholder=""
-                            />
-                        </div>
-                        <!-- bs5-form-email-->
-                        <div class="mb-3">
-                            <label for="" class="form-label">Email</label>
-                            <input
-                                type="email"
-                                class="form-control"
-                                name=""
-                                id=""
-                                aria-describedby="emailHelpId"
-                                placeholder="abc@mail.com"
-                            />
-                        </div>
-                        <!-- button.btn.btn-outline-light-->
-                        <button class="btn btn-outline-light">
-                            <i class="bi bi-envelope-fill me-2"></i> Subcribe
-                        </button>
-                    </div>
-                </div>
-            </div>
             
+        </header>
+        <!--Banner-->
+        <section class="container-fluid" id="banner">
+            <div class="container text-white text-center">
+                <div id="carousel-banner" class="carousel slide" data-bs-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li
+                            data-bs-target="#carousel-banner"
+                            data-bs-slide-to="0"
+                            class="active"
+                            aria-current="true"
+                            aria-label="First slide"
+                        ><span>0</span></li>
+                        <li
+                            data-bs-target="#carousel-banner"
+                            data-bs-slide-to="1"
+                            aria-label="Second slide"
+                        ><span>1</span></li>
+                        <li
+                            data-bs-target="#carousel-banner"
+                            data-bs-slide-to="2"
+                            aria-label="Third slide"
+                        ><span>2</span></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <h1>Web Development <br>
+                            for everyone</h1>
+                            <a href="gallery.html" class="btn text-bold text-uppercase text-white rounded-4 px-4">
+                                See more
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <h1>22880239 <br>
+                            TRẦN VĂN KHIÊU</h1>
+                        </div>
+                        <div class="carousel-item">
+                            <h1>LẬP TRÌNH WEB 1<br>
+                            DTTX - HỌC KÌ I - NĂM HỌC:2023-2024</h1>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Products -->
+        <section class="container" id="products">
+            
+        </section>
+
+        <!-- about us -->
+        <section class="container-fluid" id="aboutus">
+            <div class="container">
+                <div class="row py-5">
+                    <div class="col-lg-9 col-md-8 col-sm-12">
+                        <h1 class="text-white">About Us</h1>
+                        <div class="text-black-50">
+                            <img class="float-start me-3" src="images/icon-about.png" alt="About us">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur fugit et assumenda, a ipsa corporis aliquam nemo placeat consectetur perspiciatis quasi illum nam odio rem officia eveniet? Maxime, id!</p>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus nihil fugit odit voluptas voluptatem dicta incidunt? Saepe eos reprehenderit a? <a href="about.html" class="btn btn-link readmore my-0 p-0">Read more</a></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-sm-12">
+                        <form action="#" id="formSignUp" class="border border-3 p-3 rounded-4 overflow-auto">
+                            <h3 class="text-center text-white">Newsletter<br>
+                                Sign up</h3>
+                            <p class="text-black-50 mb-2">Please, write an e-maill:</p>
+                            <input type="email" name="email-signup" id="email-signup" class="form-control mt-0 mb-2">
+                            <button type="submit" class="btn btn-dark text-white float-end text-uppercase rounded-4 px-4"><h4 class="mt-0">Sign Up</h4></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- news -->
+        <section class="container py-5" id="news">
+            <h1 class="text-black-10">News</h1>
+            <div class="row py-3">
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="float-start me-3">
+                        <div class="date text-white text-center rounded-4 py-1">
+                            <h3>Apr.<br>
+                            20</h3>
+                        </div>
+                        <a href="#" class="btn btn-link readmore ps-0">Read more</a>
+                    </div>
+                    <div>
+                        <h3>Accumsan et</h3>
+                        <p class="text-black-50">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="float-start me-3">
+                        <div class="date text-white text-center rounded-4 py-1">
+                            <h3>Apr.<br>
+                            20</h3>
+                        </div>
+                        <a href="#" class="btn btn-link readmore ps-0">Read more</a>
+                    </div>
+                    <div>
+                        <h3>Typi non habent</h3>
+                        <p class="text-black-50">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ipsa tenetur neque optio inventore velit.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="float-start me-3">
+                        <div class="date text-white text-center rounded-4 py-1">
+                            <h3>Apr.<br>
+                            20</h3>
+                        </div>
+                        <a href="#" class="btn btn-link readmore ps-0">Read more</a>
+                    </div>
+                    <div>
+                        <h3>Claritas est etiam</h3>
+                        <p class="text-black-50">Eodem modo typi, quimolestie consequat, vel illum dolore eu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- footer -->
+        <footer class="text-center container-fluid text-white py-3">
+            <ul
+                class="nav justify-content-center py-3" id="menu-footer"
+            >
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html" aria-current="page"
+                        >Home</a
+                    >
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="blogs.html">Blogs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contacts.html">Contacts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal"
+                    data-bs-target="#modalLogin">Login</a>
+                </li>
+            </ul>
+            <p class="text-white-50">Copyright &copy; 2024 by Trần Văn Khiêu - 22880239</p>
         </footer>
-        <!-- div.container-fluid.bg-primary.opacity-50.text-center, cần đặt này ngoài footer vì nêú để trong thì sẽ bị đè màu nền-->
-        <div class="container-fluid bg-primary opacity-75 text-center text-white py-2">
-            Copyright &copy; 2025
+
+        <!-- Modal Login -->
+        <div
+            class="modal fade"
+            id="modalLogin"
+            tabindex="-1"
+            data-bs-backdrop="static"
+            data-bs-keyboard="false"
+            
+            role="dialog"
+            aria-labelledby="modalTitleId"
+            aria-hidden="true"
+        >
+            <div
+                class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+                role="document"
+            >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="#" method="post" id="formLogin">
+                            <h3 class="text-center">
+                                Login Form
+                            </h3>
+                            <div class="mb-3">
+                                <input type="text" name="username" id="username" placeholder="Username" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <input type="password" name="password" id="password" placeholder="Password" class="form-control">
+                            </div>
+                            <button type="submit" class="form-control btn">Login</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
         </div>
+        
+        <!-- Optional: Place to the bottom of scripts -->
+        <script>
+            const myModal = new bootstrap.Modal(
+                document.getElementById("modalID"),
+                options,
+            );
+        </script>
+        
+        <!-- Bootstrap JavaScript Libraries -->
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
             integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -335,5 +300,33 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+        <!--Handlebars-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js" integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script id="products-template" type="text/x-handlebars-template">
+            <div class="row text-center py-5">
+                {{#each data}}
+                <div class="col-lg-3 col-md-6 col-sm-12">
+                    <img src="{{imagepath}}" alt="{{name}}">
+                    <h3>{{name}}</h3>
+                    <p>{{summary}}</p>
+                    <a class="readmore btn btn-link pt-0" href="#">Read more</a>
+                </div>
+                {{/each}}
+            </div>
+        </script>
+        <script>
+            (async function(){
+                const response = await fetch('https://web1-api.vercel.app/api/products')
+                const data = await response.json();
+                
+
+                var source = document.getElementById("products-template").innerHTML;
+                var template = Handlebars.compile(source);
+                var context = {data : data};
+                var view = document.getElementById('products')
+                view.innerHTML = template(context);
+            })();
+        </script>
     </body>
 </html>
