@@ -1,11 +1,339 @@
-<!DOCTYPE html>
+<!doctype html> <!-- Để gọi HTML có liên kết với CSS, Bootstrap, Javascrpt thì gõ  bs5 + tab -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    web1 - hellhelhel <3
-</body>
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <!-- cài https://icons.getbootstrap.com/?q=boots, hiểu là bootstrap icon-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <!-- Tự định nghĩa CSS -->
+        <link rel ="stylesheet" href ="style.css">
+    </head>
+
+    <body>
+        <!-- Tạo Header chiếm hết chiều rộng của trình duyệt, nếu container-fluid: full trang, bỏ -fuild thì sẽ có lề-->
+        <header class = "container-fluid bg-primary">
+            <!-- tạo component, navbar, gõ bs5-navbar chọn default -->
+            <!-- sửa thêm thuộc tính class = container, để tự động canh giữa -->
+            <!-- Xoá thuộc tính bg-light để chung màu với header, navbar-dark chữ sáng nền tối -->
+            <nav 
+                class="navbar navbar-expand-sm navbar-dark container"
+            >
+                <div class="container">
+                    <!-- icon lấy ở đây:  https://icons.getbootstrap.com/icons/bootstrap/ , 
+                    copy <i class="bi bi-bootstrap"></i> để trước test -->
+                    <a class="navbar-brand" href="#"><i class="bi bi-bootstrap"></i> Start Bootstrap</a>
+                    <button
+                        class="navbar-toggler d-lg-none"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#collapsibleNavId"
+                        aria-controls="collapsibleNavId"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                    >
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavId">
+                        <!-- thẻ hyperlink, vị trí me-auto được tự động, muốn bên phải, ms, margin start-->
+                        <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#" aria-current="page"
+                                    >Home
+                                    <span class="visually-hidden">(current)</span></a
+                                >
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a
+                                    class="nav-link dropdown-toggle"
+                                    href="#"
+                                    id="dropdownId"
+                                    data-bs-toggle="dropdown"
+                                    aria-haspopup="true"
+                                    aria-expanded="false"
+                                    >Dropdown</a
+                                >
+                                <div
+                                    class="dropdown-menu"
+                                    aria-labelledby="dropdownId"
+                                >
+                                    <a class="dropdown-item" href="#"
+                                        >Action 1</a
+                                    >
+                                    <a class="dropdown-item" href="#"
+                                        >Action 2</a
+                                    >
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- Phần phía sau là container -->
+        <main class="container">
+            <!-- Tạo slide show gõ bs5-cảousel chọn dèault-->
+            <!-- Hình cách mép trên 1 khoảng py-3-->
+            <div id="carouselId" class="carousel slide py-3" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li
+                        data-bs-target="#carouselId"
+                        data-bs-slide-to="0"
+                        class="active"
+                        aria-current="true"
+                        aria-label="First slide"
+                    ></li>
+                    <li
+                        data-bs-target="#carouselId"
+                        data-bs-slide-to="1"
+                        aria-label="Second slide"
+                    ></li>
+                    <li
+                        data-bs-target="#carouselId"
+                        data-bs-slide-to="2"
+                        aria-label="Third slide"
+                    ></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <!-- Đổi đường dẫn của hình-->
+                        <img
+                            src="images/banner1.jpg"
+                            class="w-100 d-block"
+                            alt="First slide"
+                        />
+                    </div>
+                    <div class="carousel-item">
+                        <img
+                            src="images/banner2.jpg"
+                            class="w-100 d-block"
+                            alt="Second slide"
+                        />
+                    </div>
+                    <div class="carousel-item">
+                        <img
+                            src="images/banner3.jpg"
+                            class="w-100 d-block"
+                            alt="Third slide"
+                        />
+                    </div>
+                </div>
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselId"
+                    data-bs-slide="prev"
+                >
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselId"
+                    data-bs-slide="next"
+                >
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+                <!-- Tạo nút bấm, gõ div.carousel -->
+                <div class="carousel-caption "> 
+                    <buton class="btn btn-primary">
+                        See more
+                    </buton>
+                </div>
+            </div>
+            <!-- Gõ bs5-jum-->
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold">Custom jumbotron</h1>
+                    <!-- col-md-8 chỉnh khung hình, chỉnh lại chiếm 12 phần col-md-12 hoặc bỏ -->
+                    <p class="fs-4">
+                        Using a series of utilities, you can create this jumbotron, just
+                        like the one in previous versions of Bootstrap. Check out the
+                        examples below for how you can remix and restyle it to your liking.
+                    </p>
+                    <hr>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde repudiandae, deleniti distinctio animi illo consequatur non sunt, nostrum nulla cumque officiis sit accusamus, assumenda ut enim dolores laboriosam maiores quos.</p>
+                    <button class="btn btn-primary btn-lg" type="button">
+                        Example button
+                    </button>
+                </div>
+            </div>
+            <!-- Bootstrap JavaScript Libraries -->
+            <div class="row" id="about">
+                <div class="col">
+                    <!-- bs5-card-backround-->
+                    <div
+                        class="card text-white bg-success text-center p-3 h-100"
+                    >
+                        <div class="card-body">
+                            <!-- thêm icon, đinh nghĩa kích thước-->
+                            <i class="bi bi-file-earmark-person"></i>
+                            <h4 class="card-title">About</h4>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- bs5-card-backround-->
+                    <div
+                        class="card text-white bg-danger text-center p-3 h-100"
+                    >
+                        <div class="card-body">
+                            <!-- thêm icon, đinh nghĩa kích thước-->
+                            <i class="bi bi-file-earmark-person"></i>
+                            <h4 class="card-title">Working Place</h4>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- bs5-card-backround-->
+                    <div
+                        class="card text-white bg-warning text-center p-3 h-100"
+                    >
+                        <div class="card-body">
+                            <!-- thêm icon, đinh nghĩa kích thước-->
+                            <i class="bi bi-file-earmark-person"></i>
+                            <h4 class="card-title">Payment</h4>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Gõ bs5-card-head-foot -->
+            <div class="card my-3">
+                <div class="card-header text-center">
+                    <h1>Working Information</h1>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col align-self-center">
+                            <img src = "images/banner1.jpg" alt="" class="img-thumbnail">
+                        </div>
+                        <div class="col">
+                            <h4 class="card-title">Special Treatment</h4>
+                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ab cumque sit animi doloribus veniam! Eos similique maxime doloremque accusamus, ullam beatae aperiam et porro quos alias quas vero ipsum?</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="card-footer text-center py-3">
+                    <button class="btn btn-primary"> Go somewhere
+                    </button>
+                </div>
+            </div>
+            <!-- Bootstrap JavaScript Libraries (div.col-lg-3.col-md-4.col-sm-6.mb-3>img.img-thumbnail.h-100[src="images/products/$.jpg"])*15 >> Enter -->
+            <div class="card">
+                <div class="card-header  text-center ">Image Gallery</div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/1.jpg" alt="" class="img-thumbnail h-100"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/2.jpg" alt="" class="img-thumbnail h-100"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/3.jpg" alt="" class="img-thumbnail h-100"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/4.jpg" alt="" class="img-thumbnail h-100"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/5.jpg" alt="" class="img-thumbnail h-100"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/6.jpg" alt="" class="img-thumbnail h-100"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/7.jpg" alt="" class="img-thumbnail h-100"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/8.jpg" alt="" class="img-thumbnail h-100"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/9.jpg" alt="" class="img-thumbnail h-100"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/10.jpg" alt="" class="img-thumbnail h-100"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/11.jpg" alt="" class="img-thumbnail h-100"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/12.jpg" alt="" class="img-thumbnail h-100"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/13.jpg" alt="" class="img-thumbnail h-100"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/14.jpg" alt="" class="img-thumbnail h-100"></div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-3"><img src="images/products/15.jpg" alt="" class="img-thumbnail h-100"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Tạo footer footer.container-fluid.bg-primary.text-white-->
+        <footer class="container-fluid bg-primary text-white">
+            <div class="container">
+                <div class="row py-3">
+                    <!-- Cột 1 -->
+                    <div class="col">
+                        <h2>Quick Links</h2>
+                        <!-- bs5-navbar-mininal-ul, bỏ expan để xuống dòng-->
+                        <nav class="navbar navbar-dark">
+                            <ul class="nav navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="#" aria-current="page"
+                                        >Nav 1 <span class="visually-hidden">(current)</span></a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Nav 2</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- Cột 2 -->
+                    <div class="col">
+                        <h2>New letters</h2>
+                        <!-- bs5-form-input-->
+                        <div class="mb-3">
+                            <label for="" class="form-label">Name</label>
+                            <input
+                                type="text"
+                                class="form-control"
+                                name=""
+                                id=""
+                                aria-describedby="helpId"
+                                placeholder=""
+                            />
+                        </div>
+                        <!-- bs5-form-email-->
+                        <div class="mb-3">
+                            <label for="" class="form-label">Email</label>
+                            <input
+                                type="email"
+                                class="form-control"
+                                name=""
+                                id=""
+                                aria-describedby="emailHelpId"
+                                placeholder="abc@mail.com"
+                            />
+                        </div>
+                        <!-- button.btn.btn-outline-light-->
+                        <button class="btn btn-outline-light">
+                            <i class="bi bi-envelope-fill me-2"></i> Subcribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </footer>
+        <!-- div.container-fluid.bg-primary.opacity-50.text-center, cần đặt này ngoài footer vì nêú để trong thì sẽ bị đè màu nền-->
+        <div class="container-fluid bg-primary opacity-75 text-center text-white py-2">
+            Copyright &copy; 2025
+        </div>
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
 </html>
